@@ -34,7 +34,7 @@ app.get("/products", (req, res) => {
 
 
     const filterdProducts = products.filter((product) =>{
-        return product[queryBy].toLowerCase().includes(query.toLowerCase())
+        return product[queryBy].toLowerCase().startsWith(query.toLowerCase())
     }
     ).slice(0,limit);
 
